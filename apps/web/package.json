@@ -10,6 +10,7 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
     "@repo/ui": "workspace:*",
     "next": "^14.2.3",
     "react": "^18.2.0",
