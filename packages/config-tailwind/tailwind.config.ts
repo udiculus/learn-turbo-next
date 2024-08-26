@@ -3,7 +3,7 @@ import { fontFamily } from "tailwindcss/defaultTheme";
 
 // We want each package to be responsible for its own content.
 const config: Omit<Config, "content"> = {
-  darkMode: "class",
+  darkMode: "selector",
   theme: {
     container: {
       center: true,
