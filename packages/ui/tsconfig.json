@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@repo/ui/*": ["./src/*"]
-    }
+    },
+    "types": ["react-dom/canary"]
   },
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"]

@@ -2,6 +2,7 @@ import { Module, ValidationPipe } from "@nestjs/common";
 import { UserController } from "./user.controller";
 import { APP_PIPE } from "@nestjs/core";
 import { UserService } from "./user.service";
+import { PrismaService } from "src/prisma/prisma.service";
 // import { APP_PIPE } from "@nestjs/core";
 
 @Module({
@@ -20,6 +21,7 @@ import { UserService } from "./user.service";
       }),
     },
     UserService,
+    PrismaService,
   ],
 })
 export class UserModule {}
