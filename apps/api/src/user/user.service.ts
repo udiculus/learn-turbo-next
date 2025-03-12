@@ -27,8 +27,8 @@ export class UserService {
     ];
   }
 
-  findOne() {
-    return { id: 1, name: "Alice" };
+  findOne(id: number) {
+    return this.prisma.user.findUnique({ where: { id } });
   }
 
   update() {

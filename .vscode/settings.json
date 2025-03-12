@@ -10,5 +10,13 @@
     "source.fixAll.eslint": "always"
   },
   "prettier.singleQuote": true,
-  "prettier.trailingComma": "es5"
+  "prettier.trailingComma": "es5",
+  "prettier.endOfLine": "crlf",
+  "files.eol": "\n",
+  "editor.fontSize": 12,
+  "editor.fontFamily": "\"JetBrainsMono\"",
+  "editor.lineHeight": 1.5,
+  "editor.fontLigatures": false,
+  "editor.codeLensFontSize": 0
 }
+

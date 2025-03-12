@@ -1,10 +1,15 @@
 import { z } from 'zod';
 
-export type UserPayload = {
+export interface RegisterPayload {
   name: string;
   email: string;
   password: string;
-};
+}
+
+export interface LoginPayload {
+  email: string;
+  password: string;
+}
 
 export type FormState<T = Record<string, string>> =
   | {
@@ -35,5 +40,16 @@ export const SignUpFormSchema = z.object({
     .regex(/[^a-zA-Z0-9]/, {
       message: 'Contain at least one special character',
     })
+    .trim(),
+});
+
+export const LoginFormSchema = z.object({
+  email: z
+    .string()
+    .email({ message: 'Please enter a valid email address.' })
+    .trim(),
+  password: z
+    .string()
+    .min(1, { message: 'Password field must not be empty.' })
     .trim(),
 });
