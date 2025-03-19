@@ -1,21 +1,24 @@
 import { Module } from "@nestjs/common";
-import { AuthService } from "./auth.service";
-import { AuthController } from "./auth.controller";
-import { UserService } from "src/user/user.service";
-import { PrismaService } from "src/prisma/prisma.service";
-import { LocalStrategy } from "./strategies/local.strategy";
 import { JwtModule } from "@nestjs/jwt";
-import jwtConfig from "./configs/jwt.config";
-import { ConfigModule } from "@nestjs/config";
+import { PrismaService } from "src/prisma/prisma.service";
+import { AuthController } from "./auth.controller";
+import { AuthService } from "./auth.service";
+import { UserService } from "src/user/user.service";
+import { LocalStrategy } from "./strategies/local.strategy";
 import { JwtStrategy } from "./strategies/jwt.strategy";
-import refreshConfig from "./configs/refresh.config";
 import { RefreshStrategy } from "./strategies/refresh-token.strategy";
+import { ConfigModule } from "@nestjs/config";
+import jwtConfig from "./configs/jwt.config";
+import refreshConfig from "./configs/refresh.config";
+import googleOauthConfig from "./configs/google-oauth.config";
+import { GoogleStrategy } from "./strategies/google.strategy";
 
 @Module({
   imports: [
     JwtModule.registerAsync(jwtConfig.asProvider()),
     ConfigModule.forFeature(jwtConfig),
     ConfigModule.forFeature(refreshConfig),
+    ConfigModule.forFeature(googleOauthConfig),
   ],
   controllers: [AuthController],
   providers: [
@@ -25,6 +28,7 @@ import { RefreshStrategy } from "./strategies/refresh-token.strategy";
     LocalStrategy,
     JwtStrategy,
     RefreshStrategy,
+    GoogleStrategy,
   ],
 })
 export class AuthModule {}
