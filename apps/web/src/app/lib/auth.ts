@@ -7,6 +7,7 @@ import {
   type RegisterPayload,
   type FormState,
   type LoginPayload,
+  type Role,
   LoginFormSchema,
 } from './type';
 import { createSession, updateToken } from './session';
@@ -87,6 +88,7 @@ export async function signIn(
     const result = (await response.json()) as {
       id: string;
       name: string;
+      role: Role;
       accessToken: string;
       refreshToken: string;
     };
@@ -95,6 +97,7 @@ export async function signIn(
       user: {
         id: result.id,
         name: result.name,
+        role: result.role,
       },
       accessToken: result.accessToken,
       refreshToken: result.refreshToken,

@@ -53,3 +53,9 @@ export const LoginFormSchema = z.object({
     .min(1, { message: 'Password field must not be empty.' })
     .trim(),
 });
+
+export enum Role {
+  ADMIN = 'ADMIN',
+  EDITOR = 'EDITOR',
+  USER = 'USER',
+}

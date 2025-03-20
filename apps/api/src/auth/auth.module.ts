@@ -12,6 +12,9 @@ import jwtConfig from "./configs/jwt.config";
 import refreshConfig from "./configs/refresh.config";
 import googleOauthConfig from "./configs/google-oauth.config";
 import { GoogleStrategy } from "./strategies/google.strategy";
+import { APP_GUARD } from "@nestjs/core";
+import { JwtAuthGuard } from "./guards/jwt-auth/jwt-auth.guard";
+import { RolesGuard } from "./guards/roles/roles.guard";
 
 @Module({
   imports: [
@@ -29,6 +32,14 @@ import { GoogleStrategy } from "./strategies/google.strategy";
     JwtStrategy,
     RefreshStrategy,
     GoogleStrategy,
+    {
+      provide: APP_GUARD,
+      useClass: JwtAuthGuard, // enabling JWT authentication guard for all routes in the application
+    },
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard, // enabling role-based authentication guard for routes requiring specific roles
+    },
   ],
 })
 export class AuthModule {}
