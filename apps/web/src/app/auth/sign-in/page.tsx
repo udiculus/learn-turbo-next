@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { BACKEND_URL } from '../../lib/constants';
+import { BACKEND_URL } from '@/lib/constants';
 import FormSignIn from './form-sign-in';
 
 function SignInPage(): React.ReactElement {

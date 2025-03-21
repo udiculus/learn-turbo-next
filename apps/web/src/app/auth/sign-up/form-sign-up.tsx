@@ -4,7 +4,7 @@ import React, { useActionState } from 'react';
 import { Input } from '@repo/ui/components/ui/input';
 import { Label } from '@repo/ui/components/ui/label';
 import ButtonSubmit from '@repo/ui/components/form/button-submit';
-import { signUp } from '../../lib/auth';
+import { signUp } from '@/lib/auth';
 
 function FormSignUp(): React.ReactElement {
   const [state, action] = useActionState(signUp, undefined);

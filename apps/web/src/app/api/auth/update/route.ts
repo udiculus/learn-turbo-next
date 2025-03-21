@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server';
-import { updateToken } from '../../../lib/session';
+import { updateToken } from '@/lib/session';
 
 export async function POST(req: NextRequest): Promise<Response> {
   const body = (await req.json()) as {
@@ -20,4 +20,3 @@ export async function POST(req: NextRequest): Promise<Response> {
   console.log('Tokens', { accessToken, refreshToken });
   return new Response('Tokens updated', { status: 200 });
 }
-

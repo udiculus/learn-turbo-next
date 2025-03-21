@@ -1,5 +1,5 @@
 import React from 'react';
-import { getProfile } from '../lib/actions';
+import { getProfile } from '@/lib/actions';
 
 async function Profile(): Promise<React.ReactElement> {
   const res = await getProfile();

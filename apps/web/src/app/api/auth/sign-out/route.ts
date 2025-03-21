@@ -1,16 +1,14 @@
 import { type NextRequest, NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { deleteSession } from '../../../lib/session';
-import { authFetch } from '../../../lib/auth-fetch';
-import { BACKEND_URL } from '../../../lib/constants';
+import { authFetch } from '@/lib/auth-fetch';
+import { BACKEND_URL } from '@/lib/constants';
+import { deleteSession } from '@/lib/session';
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
-  const response = await authFetch(`${BACKEND_URL}/auth/sign-out`, {
+  await authFetch(`${BACKEND_URL}/auth/sign-out`, {
     method: 'POST',
   });
-  if (response.ok) {
-    await deleteSession();
-  }
+  await deleteSession();
 
   revalidatePath('/', 'layout');
   revalidatePath('/', 'page');

@@ -1,7 +1,7 @@
 import { type NextRequest } from 'next/server';
 import { redirect } from 'next/navigation';
-import { createSession } from '../../../../lib/session';
-import { type Role } from '../../../../lib/type';
+import { createSession } from '@/lib/session';
+import { type Role } from '@/lib/type';
 
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import { getSession } from '../app/lib/session';
+import { getSession } from '@/lib/session';
 
 async function SignInButton(): Promise<React.ReactElement> {
   const session = await getSession();

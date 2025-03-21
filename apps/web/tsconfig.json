@@ -1,6 +1,13 @@
 {
   "extends": "@repo/typescript-config/nextjs.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/components/*": ["./src/components/*"],
+      "@/api/*": ["./src/app/api/*"],
+      "@/lib/*": ["./src/app/lib/*"],
+      "@/fonts/*": ["./src/app/fonts/*"]
+    },
     "plugins": [{ "name": "next" }],
     "types": ["react/canary", "react-dom/canary"]
   },
