@@ -1,17 +1,21 @@
-import type { Config } from "tailwindcss";
-import sharedConfig from "@repo/tailwind-config";
-import tailwindcssAnimate from "tailwindcss-animate";
+import type { Config } from 'tailwindcss';
+import sharedConfig from '@repo/tailwind-config';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
-const config: Pick<Config, "prefix" | "presets" | "content" | "darkMode" | "plugins"> = {
+const config: Pick<
+  Config,
+  'prefix' | 'presets' | 'content' | 'darkMode' | 'plugins'
+> = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
-  prefix: "",
+    './src/**/*.{ts,tsx,css}',
+    './src/**/*.css',
+  ],
+  prefix: '',
   presets: [sharedConfig],
-  plugins: [tailwindcssAnimate]
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;
