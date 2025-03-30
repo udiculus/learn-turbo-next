@@ -19,9 +19,9 @@
   },
   "license": "MIT",
   "scripts": {
-    "build": "tailwindcss -i ./src/styles.css -o ./dist/index.css",
+    "build": "npx @tailwindcss/cli -i ./src/styles.css -o ./dist/index.css",
     "lint": "eslint src/",
-    "dev": "tailwindcss -i ./src/styles.css -o ./dist/index.css --watch",
+    "dev": "npx @tailwindcss/cli -i ./src/styles.css -o ./dist/index.css --watch",
     "type-check": "tsc --noEmit",
     "ui:add": "pnpm dlx shadcn@latest add",
     "storybook": "storybook dev -p 6006",
@@ -44,13 +44,14 @@
     "@storybook/react": "^8.2.9",
     "@storybook/react-vite": "^8.2.9",
     "@storybook/test": "^8.2.9",
+    "@tailwindcss/cli": "4.0.17",
+    "@tailwindcss/postcss": "^4.0.17",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "autoprefixer": "10.4.20",
     "eslint-plugin-storybook": "^0.8.0",
     "postcss": "8.4.49",
     "storybook": "^8.2.9",
-    "tailwindcss": "3.4.17",
+    "tailwindcss": "4.0.17",
     "typescript": "5.7.2"
   },
   "dependencies": {
