@@ -1,5 +1,1 @@
-@import "@repo/ui/styles.css";
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import '@repo/ui/styles.css' layer(base);

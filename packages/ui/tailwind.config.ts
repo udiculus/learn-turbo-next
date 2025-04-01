@@ -11,7 +11,6 @@ const config: Pick<
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx,css}',
-    './src/**/*.css',
   ],
   prefix: '',
   presets: [sharedConfig],
