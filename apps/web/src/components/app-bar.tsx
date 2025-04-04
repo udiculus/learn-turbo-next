@@ -12,7 +12,7 @@ import { ToggleTheme } from './toggle-theme';
 
 function AppBar(): React.ReactElement {
   return (
-    <div className="p-2 shadow flex gap-3 bg-background text-foreground">
+    <div className="p-2 w-2xl mx-auto shadow flex gap-3 bg-background text-foreground">
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>

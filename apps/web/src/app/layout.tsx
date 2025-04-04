@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
+import '@repo/ui/styles.css';
 import AppBar from '@/components/app-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 

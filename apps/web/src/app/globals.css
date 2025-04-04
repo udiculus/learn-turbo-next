@@ -1,1 +1,3 @@
-@import '@repo/ui/styles.css' layer(base);
+@import 'tailwindcss';
+@import '@repo/ui/theme.css';
+/* @import '@repo/ui/styles.css' layer(base); */
